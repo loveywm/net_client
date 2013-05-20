@@ -20,7 +20,7 @@ typedef unsigned int  u32;
 #define 	TURE                1
 #define 	FALSE               0
 #define 	SERVER_PORT         5005
-#define         SERVER_IP           "192.168.40.20"
+#define         SERVER_IP           "192.168.1.150"
 #define         SOCK_BUFFER_SIZE    1024
 #define         TCP_SEND_TIMEOUT    5000
 #define         TCP_RECV_TIMEOUT    5000
