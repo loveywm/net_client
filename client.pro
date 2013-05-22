@@ -16,7 +16,12 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp \
-    client.cpp
+    client.cpp \
+    net.cpp \
+    arp.cpp \
+    arp_attack.cpp \
+    eth_arp_show.cpp
 
 HEADERS += \
-    client.h
+    client.h \
+    net.h

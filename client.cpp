@@ -124,18 +124,6 @@ u8  tcp_send(void *pBuffer,int Buflen)
 }
 
 
-int GetMainTickCount(void)
-{
-    static int __start_time = 0; //second
-    struct timeval tv;
-
-    gettimeofday(&tv, NULL);
-
-    if (__start_time == 0)
-        __start_time = tv.tv_sec;
-
-    return ((tv.tv_sec - __start_time) * 1000 + tv.tv_usec / 1000);
-}
 
 //接受处理
 int tcpclient_recv(int sockfd,void *pbuffer,int buflen)
@@ -172,7 +160,9 @@ u8  tcp_recv(void *pBuffer,int Buflen)
 {
     int ret;
     ret = tcpclient_recv(client_sock,pBuffer,Buflen);
-    if(ret == Buflen)
+    printf("ret ==%d\n",ret);
+    printf("Bufferlen ==%d\n",Buflen);
+    if(ret > 0)
     {
         return TURE;
     }

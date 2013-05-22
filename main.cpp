@@ -25,7 +25,8 @@ void *create_tcpclient(void *arg)
             }
         }
         sleep(3);
-        printf("int create\r\n");
+        printf("create_tcpclient\r\n");
+        printf("tcpclient_connect_status ==%d\n",tcpclient_connect_status);
     }
 }
 
@@ -33,7 +34,11 @@ int main(int argc,char *argv[])
 {
     QCoreApplication a(argc, argv);
 
-    pthread_t tcp_client_id;
+    //arp_func();
+    //arp_attack_func();
+    eth_arp_show_func();
+
+/*    pthread_t tcp_client_id;
     int loveywm;
     loveywm = pthread_create(&tcp_client_id,NULL,create_tcpclient,NULL);
     if(loveywm != 0)
@@ -48,14 +53,22 @@ int main(int argc,char *argv[])
         tcp_send(&count,4);
         sleep(1);
     }
-    int pdate;
+    int pdata;
+    char buf[4];
     while(1)
     {
-        loveywm = tcp_recv(&pdate,4);
+        loveywm = tcp_recv(buf,4);
         if(loveywm == 1)
-            printf("pdate==%d\n",pdate);
-    }
+        {
+            for(pdata=0;pdata<4;pdata++)
+            {
+                printf("pdate==%d\n",buf[pdata]);
+            }
 
+        }
+
+    }
+*/
     return a.exec();
     //return 0;
 }
