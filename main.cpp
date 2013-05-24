@@ -36,7 +36,8 @@ int main(int argc,char *argv[])
 
     //arp_func();
     //arp_attack_func();
-    eth_arp_show_func();
+    //eth_arp_show_func();
+    ping_func();
 
 /*    pthread_t tcp_client_id;
     int loveywm;

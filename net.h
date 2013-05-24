@@ -58,6 +58,7 @@ typedef unsigned int  u32;
 #define         ETH_LEN     sizeof(struct eth_t)
 #define         ARP_LEN     sizeof(struct arp_t)
 #define         IP_LEN      sizeof(struct ip_t)
+#define         ICMP_LEN      sizeof(struct icmp_t)
 
 
 #pragma pack(1)
@@ -91,7 +92,13 @@ typedef struct ip_t{
     u16 checksum;       //16位IP首部校验和
     u32 srcIP;          //32位源IP
     u32 dstIP;          //32位目的IP
-}Ip_head;
+}Ip_Head;
+
+typedef struct icmp_t{
+    u8  type;
+    u8  code;
+    u16 checksum;
+}Icmp_Head;
 
 
 
@@ -103,6 +110,7 @@ void mk_arp_num(u8 *data, u16 op, u8 *src_mac, u32 src_ip, u8 *dst_mac, u32 dst_
 int  arp_func(void);
 int arp_attack_func(void);
 int eth_arp_show_func(void);
+int ping_func(void);
 int GetMainTickCount(void);
 
 void show_mac_addr(u8 *addr);

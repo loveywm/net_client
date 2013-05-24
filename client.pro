@@ -20,7 +20,8 @@ SOURCES += main.cpp \
     net.cpp \
     arp.cpp \
     arp_attack.cpp \
-    eth_arp_show.cpp
+    eth_arp_show.cpp \
+    ping.cpp
 
 HEADERS += \
     client.h \
